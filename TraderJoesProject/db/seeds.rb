@@ -188,15 +188,15 @@ items = [
 items.each {|item| Item.create(item)}
 
 5.times do
-    Review.create({content: Faker::Hipster.sentence(word_count: 3), rating: (1..5).to_a.sample, user_id: brad.id, item_id: (1..3).to_a.sample})
+    Review.create({content: Faker::Hipster.sentence(word_count: 3), rating: (1..5).to_a.sample, user_id: brad.id, item_id: (1..122).to_a.sample})
 end
 
 5.times do
-    Review.create({content: Faker::Hipster.sentence(word_count: 3), rating: (1..5).to_a.sample, user_id: jodi.id, item_id: (1..3).to_a.sample})
+    Review.create({content: Faker::Hipster.sentence(word_count: 3), rating: (1..5).to_a.sample, user_id: jodi.id, item_id: (1..122).to_a.sample})
 end
 
 10.times do
-    Favorite.create({user_id: (1..2).to_a.sample, item_id: (1..3).to_a.sample})
+    Favorite.create({user_id: (1..2).to_a.sample, item_id: (1..122).to_a.sample})
 end
 
 10.times do
