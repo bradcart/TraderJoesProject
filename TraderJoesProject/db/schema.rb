@@ -51,8 +51,10 @@ ActiveRecord::Schema.define(version: 2020_07_08_214334) do
     t.integer "rating"
     t.integer "user_id", null: false
     t.integer "item_id", null: false
+    t.integer "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_reviews_on_category_id"
     t.index ["item_id"], name: "index_reviews_on_item_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
@@ -72,6 +74,7 @@ ActiveRecord::Schema.define(version: 2020_07_08_214334) do
   add_foreign_key "favorites", "items"
   add_foreign_key "favorites", "users"
   add_foreign_key "items", "categories"
+  add_foreign_key "reviews", "categories"
   add_foreign_key "reviews", "items"
   add_foreign_key "reviews", "users"
 end

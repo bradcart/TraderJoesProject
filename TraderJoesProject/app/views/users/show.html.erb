@@ -1,0 +1,13 @@
+<h1> Welcome, <%= @user.name %></h1>
+
+
+<h2>Latest Reviews:</h2>
+
+<% @reviews.each do |r|  %>
+   <h4><%= r.item.name %></h4>
+   <img src="<%= r.item.product_pic %>" alt="product pic" style="width:500px;height:600px;">
+   <p><%= r.content %></p>
+   <h4><%= r.rating %> stars</h4>
+    -<%= r.user.username %>
+   <% end %>
+

@@ -1,0 +1,11 @@
+<h1>Create New Review:</h1>
+
+<%= form_for @review do |f| %>
+    Write your review below:<br>
+    <%= f.text_area :content %><br>
+    Assign a rating:<br>
+    <% 1.upto(5) do |i| %>
+        <%= f.radio_button :rating, i %> <%= i %> 
+    <% end %><br>
+    <%= f.submit "Post" %>
+<% end %>

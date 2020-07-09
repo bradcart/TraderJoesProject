@@ -4,10 +4,10 @@ class SessionsController < ApplicationController
 
     end
 
-    # def destroy
-        # session.delete(:user_id)
-        # redirect_to '/'
-    # end
+    def destroy
+        session[:user_id] = nil
+        redirect_to welcome_path
+    end
 
     def new
         
