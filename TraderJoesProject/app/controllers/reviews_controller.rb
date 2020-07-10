@@ -6,6 +6,11 @@ class ReviewsController < ApplicationController
         @item = Item.create_or_find_by(params[:name])
     end
 
+    def index
+        @user = User.find(params[:profile_id])
+    end
+
+
     def create
         if @review.valid?
             @review.save

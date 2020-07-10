@@ -1,0 +1,10 @@
+<h1> Welcome to Your Profile! </h1>
+<h2><%= @user.name %></h2>
+
+<%= button_to 'See My Reviews', profile_reviews_path(@user), :method => :get %>
+<br>
+<br>
+<%= button_to 'See My Favorites', profile_favorites_path(@user), :method => :get %>
+<br>
+<br>
+<%= button_to 'See My Comments', profile_comments_path(@user), :method => :get %>

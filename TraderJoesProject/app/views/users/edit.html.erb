@@ -1,0 +1,27 @@
+<h1>Edit Your Info:</h1>
+<br>
+
+<%= form_for @user do |f| %>
+    <%= f.label :update_name %>
+    <%= f.text_field :name %>
+    
+    <%= f.label :new_username %>
+    <%= f.text_field :username %>
+
+    <%= f.label :new_password %>
+    <%= f.password_field :password %>
+
+    <%= f.submit "Make Changes" %>
+<% end %>
+
+<br>
+<br>
+
+<%= button_to "Delete Profile", { action: "destroy", id: @user.id }, method: :delete %>
+
+<br>
+<br>
+
+ <h3>No changes needed?</h3>
+
+ <%= button_to 'Go Back', user_path(@user), :method => :get %>

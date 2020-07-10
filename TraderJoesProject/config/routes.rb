@@ -12,8 +12,11 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
   delete '/logout' => 'sessions#destroy'
-  get '/profile' => 'users#profile'
-  patch '/profile' => 'users#update_profile'
+  get '/profile/:id' => 'users#profile', as: 'profile'
+  get '/profile/:profile_id/reviews' => 'reviews#index', as: 'profile_reviews'
+  get '/profile/:profile_id/favorites' => 'favorites#index', as: 'profile_favorites'
+  get '/profile/:profile_id/comments' => 'comments#index', as: 'profile_comments'
+  
   
 
   resources :users

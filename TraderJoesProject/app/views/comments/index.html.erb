@@ -1,0 +1,12 @@
+<h1> These are all my Comments: </h1>
+
+<% @user.comments.each do |c|  %>
+   <img src="<%= c.review.item.product_pic %>" alt="product pic" style="width:500px;height:600px;">
+   <p>Review: <%= c.review.content %></p>
+   <p>Rating: <%= c.review.rating %> stars</p>
+   <p> - <%= c.review.user.name %></p>
+   <b><p>Your Comment: "<%= c.content %>"</p></b>
+   <% end %>
+
+
+

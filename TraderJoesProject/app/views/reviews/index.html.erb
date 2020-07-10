@@ -1,0 +1,8 @@
+<h1>These are my reviews:</h1>
+
+<% @user.reviews.each do |r|  %>
+   <img src="<%= r.item.product_pic %>" alt="product pic" style="width:500px;height:600px;">
+   <p>Category: <%= r.category.name %></p>
+   <p>Review: <%= r.content %></p>
+   <h4>Rating: <%= r.rating %> stars</h4>
+   <% end %>

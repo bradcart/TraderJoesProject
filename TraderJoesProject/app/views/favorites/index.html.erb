@@ -1,0 +1,7 @@
+<h1> These are all my favorite items from Trader Joe's: </h1>
+
+<% @user.favorites.each do |f|  %>
+   <img src="<%= f.item.product_pic %>" alt="product pic" style="width:500px;height:600px;">
+   <p>Category: <%= f.item.category.name %></p>
+   <p>Item: <%= f.item.name %></p>
+   <% end %>

@@ -10,13 +10,9 @@
 
   <body>
   <!-- Navigation -->
-    <% if !session[:user_id].nil? %>
-      <% @current_user = User.find(session[:user_id]) %>
-        <%= form_for @current_user, url: logout_path, method: :delete do |f| %>
-        <%= f.submit "Logout" %>
-        <% end %>
+    
 
-    <% end %>
+
     
     <!-- Main Content -->
     <%= yield %>
